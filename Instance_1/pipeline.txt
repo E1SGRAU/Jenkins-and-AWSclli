@@ -12,6 +12,10 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/E1SGRAU/Jenkins.git'
             }
         }
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+# На Amazon Elastic Container Registry створіть public репозиторій, після чого зайдіть
+та із вкладки "View push commands" скопіюйте команди
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
         stage('PushAWS') {
             steps {
             sh 'aws ecr-public get-login-password --region "name region" | docker login --username AWS --password-stdin public.ecr.aws/######'
