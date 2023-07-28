@@ -50,8 +50,8 @@ sudo apt -y update
 #configure clli
 sudo su jenkins
 aws configure
-    #Enter -> AWS Access Key ID
-    #Enter -> AWS Secret Access Key
+    #Enter -> AWS Access Key ID який можна буде взяти при створенні IAM user
+    #Enter -> AWS Secret Access Key який можна буде взяти при створенні IAM user
     #Enter -> Default region name
     #Enter -> Default output format: json
 exit
