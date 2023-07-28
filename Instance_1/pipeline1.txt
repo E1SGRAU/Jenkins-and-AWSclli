@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage("GitClone"){
             steps{
-                git branch: 'main', url: 'https://github.com/E1SGRAU/Jenkins.git'
+                git branch: 'main', url: 'https://github.com/E1SGRAU/Jenkins-and-AWSclli.git'
             }
         }
 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
