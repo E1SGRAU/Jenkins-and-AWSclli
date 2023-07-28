@@ -1,0 +1,20 @@
+Dashboard > Manage Jenkins > New node
+
+Node name > "Node1" (Permanent Agent)
+Number of executors > 1
+Remote root directory > /home/ubuntu/Jenkins
+Labels > nodeDocker
+Usage > Only build jobs wthi label expressions matching this node
+Launch method > SSH
+  Host > ip-address
+  Credentials >
+    Scope > Global
+    ID > docker-ssh-node
+    Description > docker-ssh-node
+    Username > ubuntu
+    Private Key > ваш публічний ключ
+    Пароль не встановлюємо
+  Host Key Verification Strategy > Manually trusted key Verification Strategy
+Availability > Keep this agent online as much as possible
+
+Save
