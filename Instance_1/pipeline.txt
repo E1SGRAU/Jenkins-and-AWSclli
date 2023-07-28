@@ -1,0 +1,26 @@
+#Заходимо по "ip-adress" на Jenkins, інсталюємо все та створюємо pipeline  в якому програмуємо запуск .yml файла або на windows, або на linux
+#Скрипт pipline
+--- --- --- --- --- --- --- --- --- --- ---
+pipeline {
+    agent any
+    environment {
+        customWorkspace="/var/lib/jenkins/workspace/MyPipeline/Jenkins"
+    }
+    stages {
+        stage("GitClone"){
+            steps{
+                git branch: 'main', url: 'https://github.com/E1SGRAU/Jenkins.git'
+            }
+        }
+        stage('PushAWS') {
+            steps {
+            sh 'aws ecr-public get-login-password --region "name region" | docker login --username AWS --password-stdin public.ecr.aws/######'
+            sh 'docker build -t "name" .'
+            sh 'docker tag "name":latest public.ecr.aws/######/"name":latest'
+            sh 'docker push public.ecr.aws/######/"name":latest'
+            }
+        }
+    }
+}
+--- --- --- --- --- --- --- --- --- --- ---
+#Зберігаємо та запускаємо
